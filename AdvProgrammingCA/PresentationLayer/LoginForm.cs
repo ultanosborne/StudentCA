@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AdvProgrammingCA.BusinessLayer;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,35 @@ namespace AdvProgrammingCA.PresentationLayer
 {
     public partial class LoginForm : Form
     {
+        LoginCheck lc;
+
         public LoginForm()
         {
             InitializeComponent();
+            lblFail.Visible = false;
+            lc = new LoginCheck();
+        }
+
+        private void btLogin_Click(object sender, EventArgs e)
+        {
+            if(lc.check(tbUsername.Text, tbPassword.Text))
+            {
+                //StudentDB sdb = new StudentDB(this);
+                this.Hide();
+                //sdb.Show();
+                allClear(); //to clear login details when unhiding this login form
+            }
+            else
+            {
+                lblFail.Visible = true;
+                allClear();
+            }
+        }
+
+        private void allClear()
+        {
+            tbUsername.Clear();
+            tbPassword.Clear();
         }
     }
 }

@@ -36,7 +36,7 @@
             this.btLogin = new System.Windows.Forms.Button();
             this.lblUsername = new System.Windows.Forms.Label();
             this.lblTag = new System.Windows.Forms.Label();
-            this.lablTitle = new System.Windows.Forms.Label();
+            this.lblTitle = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblFail
@@ -94,6 +94,7 @@
             this.btLogin.TabIndex = 12;
             this.btLogin.Text = "Login";
             this.btLogin.UseVisualStyleBackColor = true;
+            this.btLogin.Click += new System.EventHandler(this.btLogin_Click);
             // 
             // lblUsername
             // 
@@ -113,21 +114,21 @@
             this.lblTag.TabIndex = 11;
             this.lblTag.Text = "Student Management System";
             // 
-            // lablTitle
+            // lblTitle
             // 
-            this.lablTitle.AutoSize = true;
-            this.lablTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lablTitle.Location = new System.Drawing.Point(141, 52);
-            this.lablTitle.Name = "lablTitle";
-            this.lablTitle.Size = new System.Drawing.Size(81, 31);
-            this.lablTitle.TabIndex = 10;
-            this.lablTitle.Text = " DBS";
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.Location = new System.Drawing.Point(141, 52);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(81, 31);
+            this.lblTitle.TabIndex = 10;
+            this.lblTitle.Text = " DBS";
             // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(374, 329);
+            this.ClientSize = new System.Drawing.Size(374, 338);
             this.Controls.Add(this.lblFail);
             this.Controls.Add(this.lblPassword);
             this.Controls.Add(this.tbPassword);
@@ -136,7 +137,7 @@
             this.Controls.Add(this.btLogin);
             this.Controls.Add(this.lblUsername);
             this.Controls.Add(this.lblTag);
-            this.Controls.Add(this.lablTitle);
+            this.Controls.Add(this.lblTitle);
             this.Name = "LoginForm";
             this.Text = "LoginForm";
             this.ResumeLayout(false);
@@ -154,6 +155,6 @@
         private System.Windows.Forms.Button btLogin;
         private System.Windows.Forms.Label lblUsername;
         private System.Windows.Forms.Label lblTag;
-        private System.Windows.Forms.Label lablTitle;
+        private System.Windows.Forms.Label lblTitle;
     }
 }
