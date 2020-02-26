@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AdvProgrammingCA.BusinessLayer;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,11 +14,15 @@ namespace AdvProgrammingCA.PresentationLayer
     public partial class DBForm : Form
     {
         LoginForm lf;
+        StudentList sl; 
 
         public DBForm(LoginForm l)
         {
             lf = l;
             InitializeComponent();
+            sl = new StudentList();
+            dgStudents.DataSource = sl.pullStudentList();
+            dgStudents.Refresh();
         }
 
         private void btLogout_Click(object sender, EventArgs e)
@@ -75,6 +80,8 @@ namespace AdvProgrammingCA.PresentationLayer
 
         private void lblView_Click(object sender, EventArgs e)
         {
+            dgStudents.DataSource = sl.pullStudentList();
+            dgStudents.Refresh();
             tabController(0);
         }
 
