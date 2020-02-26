@@ -28,12 +28,132 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.lblFail = new System.Windows.Forms.Label();
+            this.lblPassword = new System.Windows.Forms.Label();
+            this.tbPassword = new System.Windows.Forms.TextBox();
+            this.btExit = new System.Windows.Forms.Button();
+            this.tbUsername = new System.Windows.Forms.TextBox();
+            this.btLogin = new System.Windows.Forms.Button();
+            this.lblUsername = new System.Windows.Forms.Label();
+            this.lblTag = new System.Windows.Forms.Label();
+            this.lablTitle = new System.Windows.Forms.Label();
+            this.SuspendLayout();
+            // 
+            // lblFail
+            // 
+            this.lblFail.AutoSize = true;
+            this.lblFail.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFail.ForeColor = System.Drawing.Color.Red;
+            this.lblFail.Location = new System.Drawing.Point(126, 121);
+            this.lblFail.Name = "lblFail";
+            this.lblFail.Size = new System.Drawing.Size(114, 24);
+            this.lblFail.TabIndex = 18;
+            this.lblFail.Text = "Login Failed";
+            this.lblFail.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblPassword
+            // 
+            this.lblPassword.AutoSize = true;
+            this.lblPassword.Location = new System.Drawing.Point(90, 192);
+            this.lblPassword.Name = "lblPassword";
+            this.lblPassword.Size = new System.Drawing.Size(56, 13);
+            this.lblPassword.TabIndex = 16;
+            this.lblPassword.Text = "Password:";
+            // 
+            // tbPassword
+            // 
+            this.tbPassword.Location = new System.Drawing.Point(166, 189);
+            this.tbPassword.Name = "tbPassword";
+            this.tbPassword.PasswordChar = '*';
+            this.tbPassword.Size = new System.Drawing.Size(100, 20);
+            this.tbPassword.TabIndex = 17;
+            this.tbPassword.Text = "pass";
+            // 
+            // btExit
+            // 
+            this.btExit.Location = new System.Drawing.Point(204, 248);
+            this.btExit.Name = "btExit";
+            this.btExit.Size = new System.Drawing.Size(84, 28);
+            this.btExit.TabIndex = 13;
+            this.btExit.Text = "Exit";
+            this.btExit.UseVisualStyleBackColor = true;
+            // 
+            // tbUsername
+            // 
+            this.tbUsername.Location = new System.Drawing.Point(166, 158);
+            this.tbUsername.Name = "tbUsername";
+            this.tbUsername.Size = new System.Drawing.Size(100, 20);
+            this.tbUsername.TabIndex = 15;
+            this.tbUsername.Text = "username";
+            // 
+            // btLogin
+            // 
+            this.btLogin.Location = new System.Drawing.Point(80, 248);
+            this.btLogin.Name = "btLogin";
+            this.btLogin.Size = new System.Drawing.Size(86, 28);
+            this.btLogin.TabIndex = 12;
+            this.btLogin.Text = "Login";
+            this.btLogin.UseVisualStyleBackColor = true;
+            // 
+            // lblUsername
+            // 
+            this.lblUsername.AutoSize = true;
+            this.lblUsername.Location = new System.Drawing.Point(88, 161);
+            this.lblUsername.Name = "lblUsername";
+            this.lblUsername.Size = new System.Drawing.Size(58, 13);
+            this.lblUsername.TabIndex = 14;
+            this.lblUsername.Text = "Username:";
+            // 
+            // lblTag
+            // 
+            this.lblTag.AutoSize = true;
+            this.lblTag.Location = new System.Drawing.Point(109, 92);
+            this.lblTag.Name = "lblTag";
+            this.lblTag.Size = new System.Drawing.Size(146, 13);
+            this.lblTag.TabIndex = 11;
+            this.lblTag.Text = "Student Management System";
+            // 
+            // lablTitle
+            // 
+            this.lablTitle.AutoSize = true;
+            this.lablTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lablTitle.Location = new System.Drawing.Point(141, 52);
+            this.lablTitle.Name = "lablTitle";
+            this.lablTitle.Size = new System.Drawing.Size(81, 31);
+            this.lablTitle.TabIndex = 10;
+            this.lablTitle.Text = " DBS";
+            // 
+            // LoginForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(374, 329);
+            this.Controls.Add(this.lblFail);
+            this.Controls.Add(this.lblPassword);
+            this.Controls.Add(this.tbPassword);
+            this.Controls.Add(this.btExit);
+            this.Controls.Add(this.tbUsername);
+            this.Controls.Add(this.btLogin);
+            this.Controls.Add(this.lblUsername);
+            this.Controls.Add(this.lblTag);
+            this.Controls.Add(this.lablTitle);
+            this.Name = "LoginForm";
             this.Text = "LoginForm";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Label lblFail;
+        private System.Windows.Forms.Label lblPassword;
+        private System.Windows.Forms.TextBox tbPassword;
+        private System.Windows.Forms.Button btExit;
+        private System.Windows.Forms.TextBox tbUsername;
+        private System.Windows.Forms.Button btLogin;
+        private System.Windows.Forms.Label lblUsername;
+        private System.Windows.Forms.Label lblTag;
+        private System.Windows.Forms.Label lablTitle;
     }
 }
