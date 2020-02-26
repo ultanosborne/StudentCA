@@ -26,9 +26,9 @@ namespace AdvProgrammingCA.PresentationLayer
         {
             if(lc.check(tbUsername.Text, tbPassword.Text))
             {
-                //StudentDB sdb = new StudentDB(this);
+                DBForm dbf = new DBForm(this);
                 this.Hide();
-                //sdb.Show();
+                dbf.Show();
                 allClear(); //to clear login details when unhiding this login form
             }
             else
@@ -42,6 +42,11 @@ namespace AdvProgrammingCA.PresentationLayer
         {
             tbUsername.Clear();
             tbPassword.Clear();
+        }
+
+        private void btExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
