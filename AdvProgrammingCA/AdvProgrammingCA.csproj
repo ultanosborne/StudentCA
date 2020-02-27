@@ -47,8 +47,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BusinessLayer\AddStudent.cs" />
     <Compile Include="BusinessLayer\LoginCheck.cs" />
     <Compile Include="BusinessLayer\StudentList.cs" />
+    <Compile Include="DataLayer\AddQuery.cs" />
     <Compile Include="DataLayer\SelectQuery.cs" />
     <Compile Include="PresentationLayer\DBForm.cs">
       <SubType>Form</SubType>

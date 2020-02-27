@@ -276,6 +276,7 @@
             this.btAddStudent.TabIndex = 23;
             this.btAddStudent.Text = "Add";
             this.btAddStudent.UseVisualStyleBackColor = true;
+            this.btAddStudent.Click += new System.EventHandler(this.btAddStudent_Click);
             // 
             // cbNewCourses
             // 

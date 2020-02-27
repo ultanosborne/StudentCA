@@ -14,7 +14,7 @@ namespace AdvProgrammingCA.PresentationLayer
     public partial class DBForm : Form
     {
         LoginForm lf;
-        StudentList sl; 
+        StudentList sl;
 
         public DBForm(LoginForm l)
         {
@@ -103,6 +103,26 @@ namespace AdvProgrammingCA.PresentationLayer
         private void lblHistory_Click(object sender, EventArgs e)
         {
             tabController(4);
+        }
+
+        private void btAddStudent_Click(object sender, EventArgs e)
+        {
+            short level = 2;
+
+            if (rbNewPostGrad.Checked)
+            {
+                level = 1;
+            }
+            else if (rbNewUnderGrad.Checked)
+            {
+                level = 0;
+            }
+
+            AddStudent ast = new AddStudent(tbNewStuN.Text, tbNewFName.Text, tbNewLName.Text, tbNewEmail.Text, tbNewPhone.Text,
+                    tbNewAd1.Text, tbNewAd2.Text, tbNewCity.Text, tbNewCountry.Text, level, cbNewCourses.Text);
+            ast.addToDB();
+            MessageBox.Show($"Added Student: {tbNewFName.Text} {tbNewLName.Text}");
+
         }
     }
 }
