@@ -1,0 +1,4 @@
+﻿CREATE PROCEDURE FindByID @SID INT
+AS
+SELECT * FROM Students
+WHERE StudentNumber = @SID

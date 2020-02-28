@@ -92,6 +92,7 @@ namespace AdvProgrammingCA.PresentationLayer
 
         private void lblEdit_Click(object sender, EventArgs e)
         {
+            gbEditStudent.Visible = false;
             tabController(2);
         }
 
@@ -122,6 +123,39 @@ namespace AdvProgrammingCA.PresentationLayer
                     tbNewAd1.Text, tbNewAd2.Text, tbNewCity.Text, tbNewCountry.Text, level, cbNewCourses.Text);
             ast.addToDB();
             MessageBox.Show($"Added Student: {tbNewFName.Text} {tbNewLName.Text}");
+
+        }
+
+        private void btEditFindStu_Click(object sender, EventArgs e)
+        {
+            FindStudent fs = new FindStudent(int.Parse(tbEditStuID.Text));
+            gbEditStudent.Visible = true;
+            tbEditStuID2.Text = fs.stu.StudentID.ToString();
+            tbEditFName.Text = fs.stu.FirstName;
+            tbEditLName.Text = fs.stu.LastName;
+            tbEditPhone.Text = fs.stu.Phone;
+            tbEditEmail.Text = fs.stu.Email;
+            tbEditA1.Text = fs.stu.AddressLine1;
+            tbEditA2.Text = fs.stu.AddressLine2;
+            tbEditCity.Text = fs.stu.City;
+            tbEditCountry.Text = fs.stu.Country;
+            
+            if (!fs.stu.Level)
+            {
+                rbEditUnderGrad.Checked = true;
+                rbEditPostGrad.Checked = false;
+            }
+            else
+            {
+                rbEditUnderGrad.Checked = false;
+                rbEditPostGrad.Checked = true;
+            }
+
+            cbEditCourse.Text = fs.stu.Course;
+        }
+
+        private void btEditUpdate_Click(object sender, EventArgs e)
+        {
 
         }
     }

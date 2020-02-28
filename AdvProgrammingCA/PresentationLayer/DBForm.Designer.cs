@@ -66,9 +66,8 @@
             this.tbpEdit = new System.Windows.Forms.TabPage();
             this.gbEditStudent = new System.Windows.Forms.GroupBox();
             this.btEditUpdate = new System.Windows.Forms.Button();
-            this.rdEditPostGrad = new System.Windows.Forms.RadioButton();
+            this.rbEditPostGrad = new System.Windows.Forms.RadioButton();
             this.rbEditUnderGrad = new System.Windows.Forms.RadioButton();
-            this.tbEditCourse = new System.Windows.Forms.TextBox();
             this.tbEditA1 = new System.Windows.Forms.TextBox();
             this.tbEditA2 = new System.Windows.Forms.TextBox();
             this.tbEditCity = new System.Windows.Forms.TextBox();
@@ -93,7 +92,6 @@
             this.btDelDelete = new System.Windows.Forms.Button();
             this.rbDelPostGrad = new System.Windows.Forms.RadioButton();
             this.rbDelUnderGrad = new System.Windows.Forms.RadioButton();
-            this.tbDelCourse = new System.Windows.Forms.TextBox();
             this.tbDelA1 = new System.Windows.Forms.TextBox();
             this.tbDelA2 = new System.Windows.Forms.TextBox();
             this.tbDelCity = new System.Windows.Forms.TextBox();
@@ -114,6 +112,16 @@
             this.tbDelStuID = new System.Windows.Forms.TextBox();
             this.lblDelStuID = new System.Windows.Forms.Label();
             this.tbpHistory = new System.Windows.Forms.TabPage();
+            this.lblEditPhone = new System.Windows.Forms.Label();
+            this.tbEditPhone = new System.Windows.Forms.TextBox();
+            this.lblEditEmail = new System.Windows.Forms.Label();
+            this.tbEditEmail = new System.Windows.Forms.TextBox();
+            this.cbEditCourse = new System.Windows.Forms.ComboBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.tbpView.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgStudents)).BeginInit();
@@ -491,10 +499,14 @@
             // 
             // gbEditStudent
             // 
+            this.gbEditStudent.Controls.Add(this.cbEditCourse);
+            this.gbEditStudent.Controls.Add(this.tbEditEmail);
+            this.gbEditStudent.Controls.Add(this.lblEditEmail);
+            this.gbEditStudent.Controls.Add(this.tbEditPhone);
+            this.gbEditStudent.Controls.Add(this.lblEditPhone);
             this.gbEditStudent.Controls.Add(this.btEditUpdate);
-            this.gbEditStudent.Controls.Add(this.rdEditPostGrad);
+            this.gbEditStudent.Controls.Add(this.rbEditPostGrad);
             this.gbEditStudent.Controls.Add(this.rbEditUnderGrad);
-            this.gbEditStudent.Controls.Add(this.tbEditCourse);
             this.gbEditStudent.Controls.Add(this.tbEditA1);
             this.gbEditStudent.Controls.Add(this.tbEditA2);
             this.gbEditStudent.Controls.Add(this.tbEditCity);
@@ -519,23 +531,24 @@
             // 
             // btEditUpdate
             // 
-            this.btEditUpdate.Location = new System.Drawing.Point(522, 97);
+            this.btEditUpdate.Location = new System.Drawing.Point(522, 104);
             this.btEditUpdate.Name = "btEditUpdate";
             this.btEditUpdate.Size = new System.Drawing.Size(75, 65);
             this.btEditUpdate.TabIndex = 19;
             this.btEditUpdate.Text = "Update";
             this.btEditUpdate.UseVisualStyleBackColor = true;
+            this.btEditUpdate.Click += new System.EventHandler(this.btEditUpdate_Click);
             // 
-            // rdEditPostGrad
+            // rbEditPostGrad
             // 
-            this.rdEditPostGrad.AutoSize = true;
-            this.rdEditPostGrad.Location = new System.Drawing.Point(358, 93);
-            this.rdEditPostGrad.Name = "rdEditPostGrad";
-            this.rdEditPostGrad.Size = new System.Drawing.Size(69, 17);
-            this.rdEditPostGrad.TabIndex = 18;
-            this.rdEditPostGrad.TabStop = true;
-            this.rdEditPostGrad.Text = "PostGrad";
-            this.rdEditPostGrad.UseVisualStyleBackColor = true;
+            this.rbEditPostGrad.AutoSize = true;
+            this.rbEditPostGrad.Location = new System.Drawing.Point(358, 93);
+            this.rbEditPostGrad.Name = "rbEditPostGrad";
+            this.rbEditPostGrad.Size = new System.Drawing.Size(69, 17);
+            this.rbEditPostGrad.TabIndex = 18;
+            this.rbEditPostGrad.TabStop = true;
+            this.rbEditPostGrad.Text = "PostGrad";
+            this.rbEditPostGrad.UseVisualStyleBackColor = true;
             // 
             // rbEditUnderGrad
             // 
@@ -548,38 +561,30 @@
             this.rbEditUnderGrad.Text = "UnderGrad";
             this.rbEditUnderGrad.UseVisualStyleBackColor = true;
             // 
-            // tbEditCourse
-            // 
-            this.tbEditCourse.Enabled = false;
-            this.tbEditCourse.Location = new System.Drawing.Point(358, 142);
-            this.tbEditCourse.Name = "tbEditCourse";
-            this.tbEditCourse.Size = new System.Drawing.Size(100, 20);
-            this.tbEditCourse.TabIndex = 16;
-            // 
             // tbEditA1
             // 
-            this.tbEditA1.Location = new System.Drawing.Point(108, 65);
+            this.tbEditA1.Location = new System.Drawing.Point(108, 69);
             this.tbEditA1.Name = "tbEditA1";
             this.tbEditA1.Size = new System.Drawing.Size(100, 20);
             this.tbEditA1.TabIndex = 4;
             // 
             // tbEditA2
             // 
-            this.tbEditA2.Location = new System.Drawing.Point(108, 90);
+            this.tbEditA2.Location = new System.Drawing.Point(108, 94);
             this.tbEditA2.Name = "tbEditA2";
             this.tbEditA2.Size = new System.Drawing.Size(100, 20);
             this.tbEditA2.TabIndex = 5;
             // 
             // tbEditCity
             // 
-            this.tbEditCity.Location = new System.Drawing.Point(108, 116);
+            this.tbEditCity.Location = new System.Drawing.Point(108, 120);
             this.tbEditCity.Name = "tbEditCity";
             this.tbEditCity.Size = new System.Drawing.Size(100, 20);
             this.tbEditCity.TabIndex = 6;
             // 
             // tbEditCountry
             // 
-            this.tbEditCountry.Location = new System.Drawing.Point(108, 142);
+            this.tbEditCountry.Location = new System.Drawing.Point(108, 146);
             this.tbEditCountry.Name = "tbEditCountry";
             this.tbEditCountry.Size = new System.Drawing.Size(100, 20);
             this.tbEditCountry.TabIndex = 7;
@@ -587,7 +592,7 @@
             // tbEditLName
             // 
             this.tbEditLName.Enabled = false;
-            this.tbEditLName.Location = new System.Drawing.Point(497, 23);
+            this.tbEditLName.Location = new System.Drawing.Point(497, 10);
             this.tbEditLName.Name = "tbEditLName";
             this.tbEditLName.Size = new System.Drawing.Size(100, 20);
             this.tbEditLName.TabIndex = 15;
@@ -595,7 +600,7 @@
             // tbEditFName
             // 
             this.tbEditFName.Enabled = false;
-            this.tbEditFName.Location = new System.Drawing.Point(296, 23);
+            this.tbEditFName.Location = new System.Drawing.Point(296, 10);
             this.tbEditFName.Name = "tbEditFName";
             this.tbEditFName.Size = new System.Drawing.Size(100, 20);
             this.tbEditFName.TabIndex = 14;
@@ -603,7 +608,7 @@
             // tbEditStuID2
             // 
             this.tbEditStuID2.Enabled = false;
-            this.tbEditStuID2.Location = new System.Drawing.Point(86, 23);
+            this.tbEditStuID2.Location = new System.Drawing.Point(92, 10);
             this.tbEditStuID2.Name = "tbEditStuID2";
             this.tbEditStuID2.Size = new System.Drawing.Size(100, 20);
             this.tbEditStuID2.TabIndex = 13;
@@ -611,7 +616,7 @@
             // lblLName
             // 
             this.lblLName.AutoSize = true;
-            this.lblLName.Location = new System.Drawing.Point(434, 26);
+            this.lblLName.Location = new System.Drawing.Point(430, 13);
             this.lblLName.Name = "lblLName";
             this.lblLName.Size = new System.Drawing.Size(61, 13);
             this.lblLName.TabIndex = 12;
@@ -620,7 +625,7 @@
             // lblCountry
             // 
             this.lblCountry.AutoSize = true;
-            this.lblCountry.Location = new System.Drawing.Point(19, 145);
+            this.lblCountry.Location = new System.Drawing.Point(19, 149);
             this.lblCountry.Name = "lblCountry";
             this.lblCountry.Size = new System.Drawing.Size(43, 13);
             this.lblCountry.TabIndex = 11;
@@ -629,7 +634,7 @@
             // lblCity
             // 
             this.lblCity.AutoSize = true;
-            this.lblCity.Location = new System.Drawing.Point(19, 119);
+            this.lblCity.Location = new System.Drawing.Point(19, 123);
             this.lblCity.Name = "lblCity";
             this.lblCity.Size = new System.Drawing.Size(24, 13);
             this.lblCity.TabIndex = 10;
@@ -638,7 +643,7 @@
             // lblEditDLevel
             // 
             this.lblEditDLevel.AutoSize = true;
-            this.lblEditDLevel.Location = new System.Drawing.Point(255, 68);
+            this.lblEditDLevel.Location = new System.Drawing.Point(247, 72);
             this.lblEditDLevel.Name = "lblEditDLevel";
             this.lblEditDLevel.Size = new System.Drawing.Size(71, 13);
             this.lblEditDLevel.TabIndex = 9;
@@ -647,7 +652,7 @@
             // lblCourse
             // 
             this.lblCourse.AutoSize = true;
-            this.lblCourse.Location = new System.Drawing.Point(255, 145);
+            this.lblCourse.Location = new System.Drawing.Point(256, 149);
             this.lblCourse.Name = "lblCourse";
             this.lblCourse.Size = new System.Drawing.Size(40, 13);
             this.lblCourse.TabIndex = 8;
@@ -656,7 +661,7 @@
             // lblEditA2
             // 
             this.lblEditA2.AutoSize = true;
-            this.lblEditA2.Location = new System.Drawing.Point(19, 93);
+            this.lblEditA2.Location = new System.Drawing.Point(19, 97);
             this.lblEditA2.Name = "lblEditA2";
             this.lblEditA2.Size = new System.Drawing.Size(77, 13);
             this.lblEditA2.TabIndex = 7;
@@ -665,7 +670,7 @@
             // lblEditFName
             // 
             this.lblEditFName.AutoSize = true;
-            this.lblEditFName.Location = new System.Drawing.Point(230, 26);
+            this.lblEditFName.Location = new System.Drawing.Point(230, 13);
             this.lblEditFName.Name = "lblEditFName";
             this.lblEditFName.Size = new System.Drawing.Size(60, 13);
             this.lblEditFName.TabIndex = 5;
@@ -674,7 +679,7 @@
             // lblEditA1
             // 
             this.lblEditA1.AutoSize = true;
-            this.lblEditA1.Location = new System.Drawing.Point(19, 68);
+            this.lblEditA1.Location = new System.Drawing.Point(19, 72);
             this.lblEditA1.Name = "lblEditA1";
             this.lblEditA1.Size = new System.Drawing.Size(77, 13);
             this.lblEditA1.TabIndex = 1;
@@ -683,7 +688,7 @@
             // lblEditStuID2
             // 
             this.lblEditStuID2.AutoSize = true;
-            this.lblEditStuID2.Location = new System.Drawing.Point(19, 26);
+            this.lblEditStuID2.Location = new System.Drawing.Point(19, 13);
             this.lblEditStuID2.Name = "lblEditStuID2";
             this.lblEditStuID2.Size = new System.Drawing.Size(61, 13);
             this.lblEditStuID2.TabIndex = 0;
@@ -697,6 +702,7 @@
             this.btEditFindStu.TabIndex = 2;
             this.btEditFindStu.Text = "Find Student";
             this.btEditFindStu.UseVisualStyleBackColor = true;
+            this.btEditFindStu.Click += new System.EventHandler(this.btEditFindStu_Click);
             // 
             // tbEditStuID
             // 
@@ -728,10 +734,14 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.btDelDelete);
             this.groupBox1.Controls.Add(this.rbDelPostGrad);
             this.groupBox1.Controls.Add(this.rbDelUnderGrad);
-            this.groupBox1.Controls.Add(this.tbDelCourse);
             this.groupBox1.Controls.Add(this.tbDelA1);
             this.groupBox1.Controls.Add(this.tbDelA2);
             this.groupBox1.Controls.Add(this.tbDelCity);
@@ -756,7 +766,7 @@
             // 
             // btDelDelete
             // 
-            this.btDelDelete.Location = new System.Drawing.Point(522, 97);
+            this.btDelDelete.Location = new System.Drawing.Point(522, 102);
             this.btDelDelete.Name = "btDelDelete";
             this.btDelDelete.Size = new System.Drawing.Size(75, 65);
             this.btDelDelete.TabIndex = 19;
@@ -787,18 +797,10 @@
             this.rbDelUnderGrad.Text = "UnderGrad";
             this.rbDelUnderGrad.UseVisualStyleBackColor = true;
             // 
-            // tbDelCourse
-            // 
-            this.tbDelCourse.Enabled = false;
-            this.tbDelCourse.Location = new System.Drawing.Point(358, 142);
-            this.tbDelCourse.Name = "tbDelCourse";
-            this.tbDelCourse.Size = new System.Drawing.Size(100, 20);
-            this.tbDelCourse.TabIndex = 16;
-            // 
             // tbDelA1
             // 
             this.tbDelA1.Enabled = false;
-            this.tbDelA1.Location = new System.Drawing.Point(108, 65);
+            this.tbDelA1.Location = new System.Drawing.Point(108, 69);
             this.tbDelA1.Name = "tbDelA1";
             this.tbDelA1.Size = new System.Drawing.Size(100, 20);
             this.tbDelA1.TabIndex = 4;
@@ -806,7 +808,7 @@
             // tbDelA2
             // 
             this.tbDelA2.Enabled = false;
-            this.tbDelA2.Location = new System.Drawing.Point(108, 90);
+            this.tbDelA2.Location = new System.Drawing.Point(108, 94);
             this.tbDelA2.Name = "tbDelA2";
             this.tbDelA2.Size = new System.Drawing.Size(100, 20);
             this.tbDelA2.TabIndex = 5;
@@ -814,7 +816,7 @@
             // tbDelCity
             // 
             this.tbDelCity.Enabled = false;
-            this.tbDelCity.Location = new System.Drawing.Point(108, 116);
+            this.tbDelCity.Location = new System.Drawing.Point(108, 120);
             this.tbDelCity.Name = "tbDelCity";
             this.tbDelCity.Size = new System.Drawing.Size(100, 20);
             this.tbDelCity.TabIndex = 6;
@@ -822,7 +824,7 @@
             // tbDelCountry
             // 
             this.tbDelCountry.Enabled = false;
-            this.tbDelCountry.Location = new System.Drawing.Point(108, 142);
+            this.tbDelCountry.Location = new System.Drawing.Point(108, 146);
             this.tbDelCountry.Name = "tbDelCountry";
             this.tbDelCountry.Size = new System.Drawing.Size(100, 20);
             this.tbDelCountry.TabIndex = 7;
@@ -830,7 +832,7 @@
             // tbDelLName
             // 
             this.tbDelLName.Enabled = false;
-            this.tbDelLName.Location = new System.Drawing.Point(497, 23);
+            this.tbDelLName.Location = new System.Drawing.Point(497, 10);
             this.tbDelLName.Name = "tbDelLName";
             this.tbDelLName.Size = new System.Drawing.Size(100, 20);
             this.tbDelLName.TabIndex = 15;
@@ -838,7 +840,7 @@
             // tbDelFName
             // 
             this.tbDelFName.Enabled = false;
-            this.tbDelFName.Location = new System.Drawing.Point(296, 23);
+            this.tbDelFName.Location = new System.Drawing.Point(296, 10);
             this.tbDelFName.Name = "tbDelFName";
             this.tbDelFName.Size = new System.Drawing.Size(100, 20);
             this.tbDelFName.TabIndex = 14;
@@ -846,7 +848,7 @@
             // tbDelStuID2
             // 
             this.tbDelStuID2.Enabled = false;
-            this.tbDelStuID2.Location = new System.Drawing.Point(86, 23);
+            this.tbDelStuID2.Location = new System.Drawing.Point(92, 10);
             this.tbDelStuID2.Name = "tbDelStuID2";
             this.tbDelStuID2.Size = new System.Drawing.Size(100, 20);
             this.tbDelStuID2.TabIndex = 13;
@@ -854,7 +856,7 @@
             // lblDelLName
             // 
             this.lblDelLName.AutoSize = true;
-            this.lblDelLName.Location = new System.Drawing.Point(434, 26);
+            this.lblDelLName.Location = new System.Drawing.Point(430, 13);
             this.lblDelLName.Name = "lblDelLName";
             this.lblDelLName.Size = new System.Drawing.Size(61, 13);
             this.lblDelLName.TabIndex = 12;
@@ -863,7 +865,7 @@
             // lblDelCountry
             // 
             this.lblDelCountry.AutoSize = true;
-            this.lblDelCountry.Location = new System.Drawing.Point(19, 145);
+            this.lblDelCountry.Location = new System.Drawing.Point(19, 149);
             this.lblDelCountry.Name = "lblDelCountry";
             this.lblDelCountry.Size = new System.Drawing.Size(43, 13);
             this.lblDelCountry.TabIndex = 11;
@@ -872,7 +874,7 @@
             // lblDelCity
             // 
             this.lblDelCity.AutoSize = true;
-            this.lblDelCity.Location = new System.Drawing.Point(19, 119);
+            this.lblDelCity.Location = new System.Drawing.Point(19, 123);
             this.lblDelCity.Name = "lblDelCity";
             this.lblDelCity.Size = new System.Drawing.Size(24, 13);
             this.lblDelCity.TabIndex = 10;
@@ -881,7 +883,7 @@
             // lblDelDLevel
             // 
             this.lblDelDLevel.AutoSize = true;
-            this.lblDelDLevel.Location = new System.Drawing.Point(255, 68);
+            this.lblDelDLevel.Location = new System.Drawing.Point(247, 72);
             this.lblDelDLevel.Name = "lblDelDLevel";
             this.lblDelDLevel.Size = new System.Drawing.Size(71, 13);
             this.lblDelDLevel.TabIndex = 9;
@@ -890,7 +892,7 @@
             // lblDelCourse
             // 
             this.lblDelCourse.AutoSize = true;
-            this.lblDelCourse.Location = new System.Drawing.Point(255, 145);
+            this.lblDelCourse.Location = new System.Drawing.Point(256, 149);
             this.lblDelCourse.Name = "lblDelCourse";
             this.lblDelCourse.Size = new System.Drawing.Size(40, 13);
             this.lblDelCourse.TabIndex = 8;
@@ -899,7 +901,7 @@
             // lblDelA2
             // 
             this.lblDelA2.AutoSize = true;
-            this.lblDelA2.Location = new System.Drawing.Point(19, 93);
+            this.lblDelA2.Location = new System.Drawing.Point(19, 97);
             this.lblDelA2.Name = "lblDelA2";
             this.lblDelA2.Size = new System.Drawing.Size(77, 13);
             this.lblDelA2.TabIndex = 7;
@@ -908,7 +910,7 @@
             // lblDelFName
             // 
             this.lblDelFName.AutoSize = true;
-            this.lblDelFName.Location = new System.Drawing.Point(230, 26);
+            this.lblDelFName.Location = new System.Drawing.Point(230, 13);
             this.lblDelFName.Name = "lblDelFName";
             this.lblDelFName.Size = new System.Drawing.Size(60, 13);
             this.lblDelFName.TabIndex = 5;
@@ -917,7 +919,7 @@
             // lbl
             // 
             this.lbl.AutoSize = true;
-            this.lbl.Location = new System.Drawing.Point(19, 68);
+            this.lbl.Location = new System.Drawing.Point(19, 72);
             this.lbl.Name = "lbl";
             this.lbl.Size = new System.Drawing.Size(77, 13);
             this.lbl.TabIndex = 1;
@@ -926,7 +928,7 @@
             // lblDelStuID2
             // 
             this.lblDelStuID2.AutoSize = true;
-            this.lblDelStuID2.Location = new System.Drawing.Point(19, 26);
+            this.lblDelStuID2.Location = new System.Drawing.Point(19, 13);
             this.lblDelStuID2.Name = "lblDelStuID2";
             this.lblDelStuID2.Size = new System.Drawing.Size(61, 13);
             this.lblDelStuID2.TabIndex = 0;
@@ -964,6 +966,100 @@
             this.tbpHistory.Name = "tbpHistory";
             this.tbpHistory.Size = new System.Drawing.Size(716, 298);
             this.tbpHistory.TabIndex = 4;
+            // 
+            // lblEditPhone
+            // 
+            this.lblEditPhone.AutoSize = true;
+            this.lblEditPhone.Location = new System.Drawing.Point(89, 41);
+            this.lblEditPhone.Name = "lblEditPhone";
+            this.lblEditPhone.Size = new System.Drawing.Size(38, 13);
+            this.lblEditPhone.TabIndex = 20;
+            this.lblEditPhone.Text = "Phone";
+            // 
+            // tbEditPhone
+            // 
+            this.tbEditPhone.Location = new System.Drawing.Point(161, 38);
+            this.tbEditPhone.Name = "tbEditPhone";
+            this.tbEditPhone.Size = new System.Drawing.Size(100, 20);
+            this.tbEditPhone.TabIndex = 21;
+            // 
+            // lblEditEmail
+            // 
+            this.lblEditEmail.AutoSize = true;
+            this.lblEditEmail.Location = new System.Drawing.Point(307, 45);
+            this.lblEditEmail.Name = "lblEditEmail";
+            this.lblEditEmail.Size = new System.Drawing.Size(32, 13);
+            this.lblEditEmail.TabIndex = 22;
+            this.lblEditEmail.Text = "Email";
+            // 
+            // tbEditEmail
+            // 
+            this.tbEditEmail.Location = new System.Drawing.Point(374, 38);
+            this.tbEditEmail.Name = "tbEditEmail";
+            this.tbEditEmail.Size = new System.Drawing.Size(100, 20);
+            this.tbEditEmail.TabIndex = 23;
+            // 
+            // cbEditCourse
+            // 
+            this.cbEditCourse.FormattingEnabled = true;
+            this.cbEditCourse.Items.AddRange(new object[] {
+            "Software Development",
+            "Arts",
+            "Science",
+            "Business",
+            "Mathematics",
+            "English"});
+            this.cbEditCourse.Location = new System.Drawing.Point(358, 146);
+            this.cbEditCourse.Name = "cbEditCourse";
+            this.cbEditCourse.Size = new System.Drawing.Size(121, 21);
+            this.cbEditCourse.TabIndex = 24;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(374, 38);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 27;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(307, 45);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(32, 13);
+            this.label1.TabIndex = 26;
+            this.label1.Text = "Email";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(161, 38);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(100, 20);
+            this.textBox2.TabIndex = 25;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(89, 41);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(38, 13);
+            this.label2.TabIndex = 24;
+            this.label2.Text = "Phone";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Software Development",
+            "Arts",
+            "Science",
+            "Business",
+            "Mathematics",
+            "English"});
+            this.comboBox1.Location = new System.Drawing.Point(358, 146);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 28;
             // 
             // DBForm
             // 
@@ -1038,9 +1134,8 @@
         private System.Windows.Forms.TabPage tbpEdit;
         private System.Windows.Forms.GroupBox gbEditStudent;
         private System.Windows.Forms.Button btEditUpdate;
-        private System.Windows.Forms.RadioButton rdEditPostGrad;
+        private System.Windows.Forms.RadioButton rbEditPostGrad;
         private System.Windows.Forms.RadioButton rbEditUnderGrad;
-        private System.Windows.Forms.TextBox tbEditCourse;
         private System.Windows.Forms.TextBox tbEditA1;
         private System.Windows.Forms.TextBox tbEditA2;
         private System.Windows.Forms.TextBox tbEditCity;
@@ -1065,7 +1160,6 @@
         private System.Windows.Forms.Button btDelDelete;
         private System.Windows.Forms.RadioButton rbDelPostGrad;
         private System.Windows.Forms.RadioButton rbDelUnderGrad;
-        private System.Windows.Forms.TextBox tbDelCourse;
         private System.Windows.Forms.TextBox tbDelA1;
         private System.Windows.Forms.TextBox tbDelA2;
         private System.Windows.Forms.TextBox tbDelCity;
@@ -1086,5 +1180,15 @@
         private System.Windows.Forms.TextBox tbDelStuID;
         private System.Windows.Forms.Label lblDelStuID;
         private System.Windows.Forms.TabPage tbpHistory;
+        private System.Windows.Forms.TextBox tbEditPhone;
+        private System.Windows.Forms.Label lblEditPhone;
+        private System.Windows.Forms.TextBox tbEditEmail;
+        private System.Windows.Forms.Label lblEditEmail;
+        private System.Windows.Forms.ComboBox cbEditCourse;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

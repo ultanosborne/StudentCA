@@ -25,7 +25,6 @@ namespace AdvProgrammingCA.DataLayer
             string al1, string al2, string city, string country, short glevel, string course)
         {
             SqlCommand cmd = new SqlCommand("AddStudent", conn);
-            cmd.Parameters.AddWithValue("@SID", id);
             cmd.Parameters.AddWithValue("@FName", fname);
             cmd.Parameters.AddWithValue("@LName", lname);
             cmd.Parameters.AddWithValue("@Email", email);
