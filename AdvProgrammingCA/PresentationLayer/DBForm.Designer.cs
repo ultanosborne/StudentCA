@@ -88,7 +88,7 @@
             this.tbEditStuID = new System.Windows.Forms.TextBox();
             this.lblEditStuID = new System.Windows.Forms.Label();
             this.tbpDelete = new System.Windows.Forms.TabPage();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.gbDelStudent = new System.Windows.Forms.GroupBox();
             this.btDelDelete = new System.Windows.Forms.Button();
             this.rbDelPostGrad = new System.Windows.Forms.RadioButton();
             this.rbDelUnderGrad = new System.Windows.Forms.RadioButton();
@@ -117,11 +117,12 @@
             this.lblEditEmail = new System.Windows.Forms.Label();
             this.tbEditEmail = new System.Windows.Forms.TextBox();
             this.cbEditCourse = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.tbDelEmail = new System.Windows.Forms.TextBox();
+            this.lblDelEmail = new System.Windows.Forms.Label();
+            this.tbDelPhone = new System.Windows.Forms.TextBox();
+            this.lblDelPhone = new System.Windows.Forms.Label();
+            this.cbDelCourse = new System.Windows.Forms.ComboBox();
+            this.dgHistory = new System.Windows.Forms.DataGridView();
             this.tabControl1.SuspendLayout();
             this.tbpView.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgStudents)).BeginInit();
@@ -129,7 +130,9 @@
             this.tbpEdit.SuspendLayout();
             this.gbEditStudent.SuspendLayout();
             this.tbpDelete.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.gbDelStudent.SuspendLayout();
+            this.tbpHistory.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgHistory)).BeginInit();
             this.SuspendLayout();
             // 
             // lblView
@@ -723,7 +726,7 @@
             // tbpDelete
             // 
             this.tbpDelete.BackColor = System.Drawing.SystemColors.Control;
-            this.tbpDelete.Controls.Add(this.groupBox1);
+            this.tbpDelete.Controls.Add(this.gbDelStudent);
             this.tbpDelete.Controls.Add(this.btDelFindStu);
             this.tbpDelete.Controls.Add(this.tbDelStuID);
             this.tbpDelete.Controls.Add(this.lblDelStuID);
@@ -732,37 +735,37 @@
             this.tbpDelete.Size = new System.Drawing.Size(716, 298);
             this.tbpDelete.TabIndex = 3;
             // 
-            // groupBox1
+            // gbDelStudent
             // 
-            this.groupBox1.Controls.Add(this.comboBox1);
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.btDelDelete);
-            this.groupBox1.Controls.Add(this.rbDelPostGrad);
-            this.groupBox1.Controls.Add(this.rbDelUnderGrad);
-            this.groupBox1.Controls.Add(this.tbDelA1);
-            this.groupBox1.Controls.Add(this.tbDelA2);
-            this.groupBox1.Controls.Add(this.tbDelCity);
-            this.groupBox1.Controls.Add(this.tbDelCountry);
-            this.groupBox1.Controls.Add(this.tbDelLName);
-            this.groupBox1.Controls.Add(this.tbDelFName);
-            this.groupBox1.Controls.Add(this.tbDelStuID2);
-            this.groupBox1.Controls.Add(this.lblDelLName);
-            this.groupBox1.Controls.Add(this.lblDelCountry);
-            this.groupBox1.Controls.Add(this.lblDelCity);
-            this.groupBox1.Controls.Add(this.lblDelDLevel);
-            this.groupBox1.Controls.Add(this.lblDelCourse);
-            this.groupBox1.Controls.Add(this.lblDelA2);
-            this.groupBox1.Controls.Add(this.lblDelFName);
-            this.groupBox1.Controls.Add(this.lbl);
-            this.groupBox1.Controls.Add(this.lblDelStuID2);
-            this.groupBox1.Location = new System.Drawing.Point(36, 100);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(647, 183);
-            this.groupBox1.TabIndex = 7;
-            this.groupBox1.TabStop = false;
+            this.gbDelStudent.Controls.Add(this.cbDelCourse);
+            this.gbDelStudent.Controls.Add(this.tbDelEmail);
+            this.gbDelStudent.Controls.Add(this.lblDelEmail);
+            this.gbDelStudent.Controls.Add(this.tbDelPhone);
+            this.gbDelStudent.Controls.Add(this.lblDelPhone);
+            this.gbDelStudent.Controls.Add(this.btDelDelete);
+            this.gbDelStudent.Controls.Add(this.rbDelPostGrad);
+            this.gbDelStudent.Controls.Add(this.rbDelUnderGrad);
+            this.gbDelStudent.Controls.Add(this.tbDelA1);
+            this.gbDelStudent.Controls.Add(this.tbDelA2);
+            this.gbDelStudent.Controls.Add(this.tbDelCity);
+            this.gbDelStudent.Controls.Add(this.tbDelCountry);
+            this.gbDelStudent.Controls.Add(this.tbDelLName);
+            this.gbDelStudent.Controls.Add(this.tbDelFName);
+            this.gbDelStudent.Controls.Add(this.tbDelStuID2);
+            this.gbDelStudent.Controls.Add(this.lblDelLName);
+            this.gbDelStudent.Controls.Add(this.lblDelCountry);
+            this.gbDelStudent.Controls.Add(this.lblDelCity);
+            this.gbDelStudent.Controls.Add(this.lblDelDLevel);
+            this.gbDelStudent.Controls.Add(this.lblDelCourse);
+            this.gbDelStudent.Controls.Add(this.lblDelA2);
+            this.gbDelStudent.Controls.Add(this.lblDelFName);
+            this.gbDelStudent.Controls.Add(this.lbl);
+            this.gbDelStudent.Controls.Add(this.lblDelStuID2);
+            this.gbDelStudent.Location = new System.Drawing.Point(36, 100);
+            this.gbDelStudent.Name = "gbDelStudent";
+            this.gbDelStudent.Size = new System.Drawing.Size(647, 183);
+            this.gbDelStudent.TabIndex = 7;
+            this.gbDelStudent.TabStop = false;
             // 
             // btDelDelete
             // 
@@ -772,6 +775,7 @@
             this.btDelDelete.TabIndex = 19;
             this.btDelDelete.Text = "Delete";
             this.btDelDelete.UseVisualStyleBackColor = true;
+            this.btDelDelete.Click += new System.EventHandler(this.btDelDelete_Click);
             // 
             // rbDelPostGrad
             // 
@@ -942,6 +946,7 @@
             this.btDelFindStu.TabIndex = 6;
             this.btDelFindStu.Text = "Find Student";
             this.btDelFindStu.UseVisualStyleBackColor = true;
+            this.btDelFindStu.Click += new System.EventHandler(this.btDelFindStu_Click);
             // 
             // tbDelStuID
             // 
@@ -962,6 +967,7 @@
             // tbpHistory
             // 
             this.tbpHistory.BackColor = System.Drawing.SystemColors.Control;
+            this.tbpHistory.Controls.Add(this.dgHistory);
             this.tbpHistory.Location = new System.Drawing.Point(4, 22);
             this.tbpHistory.Name = "tbpHistory";
             this.tbpHistory.Size = new System.Drawing.Size(716, 298);
@@ -1001,6 +1007,7 @@
             // 
             // cbEditCourse
             // 
+            this.cbEditCourse.Enabled = false;
             this.cbEditCourse.FormattingEnabled = true;
             this.cbEditCourse.Items.AddRange(new object[] {
             "Software Development",
@@ -1014,52 +1021,63 @@
             this.cbEditCourse.Size = new System.Drawing.Size(121, 21);
             this.cbEditCourse.TabIndex = 24;
             // 
-            // textBox1
+            // tbDelEmail
             // 
-            this.textBox1.Location = new System.Drawing.Point(374, 38);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 27;
+            this.tbDelEmail.Enabled = false;
+            this.tbDelEmail.Location = new System.Drawing.Point(374, 38);
+            this.tbDelEmail.Name = "tbDelEmail";
+            this.tbDelEmail.Size = new System.Drawing.Size(100, 20);
+            this.tbDelEmail.TabIndex = 27;
             // 
-            // label1
+            // lblDelEmail
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(307, 45);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(32, 13);
-            this.label1.TabIndex = 26;
-            this.label1.Text = "Email";
+            this.lblDelEmail.AutoSize = true;
+            this.lblDelEmail.Location = new System.Drawing.Point(307, 45);
+            this.lblDelEmail.Name = "lblDelEmail";
+            this.lblDelEmail.Size = new System.Drawing.Size(32, 13);
+            this.lblDelEmail.TabIndex = 26;
+            this.lblDelEmail.Text = "Email";
             // 
-            // textBox2
+            // tbDelPhone
             // 
-            this.textBox2.Location = new System.Drawing.Point(161, 38);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 25;
+            this.tbDelPhone.Enabled = false;
+            this.tbDelPhone.Location = new System.Drawing.Point(161, 38);
+            this.tbDelPhone.Name = "tbDelPhone";
+            this.tbDelPhone.Size = new System.Drawing.Size(100, 20);
+            this.tbDelPhone.TabIndex = 25;
             // 
-            // label2
+            // lblDelPhone
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(89, 41);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(38, 13);
-            this.label2.TabIndex = 24;
-            this.label2.Text = "Phone";
+            this.lblDelPhone.AutoSize = true;
+            this.lblDelPhone.Location = new System.Drawing.Point(89, 41);
+            this.lblDelPhone.Name = "lblDelPhone";
+            this.lblDelPhone.Size = new System.Drawing.Size(38, 13);
+            this.lblDelPhone.TabIndex = 24;
+            this.lblDelPhone.Text = "Phone";
             // 
-            // comboBox1
+            // cbDelCourse
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cbDelCourse.Enabled = false;
+            this.cbDelCourse.FormattingEnabled = true;
+            this.cbDelCourse.Items.AddRange(new object[] {
             "Software Development",
             "Arts",
             "Science",
             "Business",
             "Mathematics",
             "English"});
-            this.comboBox1.Location = new System.Drawing.Point(358, 146);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 28;
+            this.cbDelCourse.Location = new System.Drawing.Point(358, 146);
+            this.cbDelCourse.Name = "cbDelCourse";
+            this.cbDelCourse.Size = new System.Drawing.Size(121, 21);
+            this.cbDelCourse.TabIndex = 28;
+            // 
+            // dgHistory
+            // 
+            this.dgHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgHistory.Location = new System.Drawing.Point(1, 6);
+            this.dgHistory.Name = "dgHistory";
+            this.dgHistory.Size = new System.Drawing.Size(714, 286);
+            this.dgHistory.TabIndex = 1;
             // 
             // DBForm
             // 
@@ -1087,8 +1105,10 @@
             this.gbEditStudent.PerformLayout();
             this.tbpDelete.ResumeLayout(false);
             this.tbpDelete.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.gbDelStudent.ResumeLayout(false);
+            this.gbDelStudent.PerformLayout();
+            this.tbpHistory.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgHistory)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1156,7 +1176,7 @@
         private System.Windows.Forms.TextBox tbEditStuID;
         private System.Windows.Forms.Label lblEditStuID;
         private System.Windows.Forms.TabPage tbpDelete;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox gbDelStudent;
         private System.Windows.Forms.Button btDelDelete;
         private System.Windows.Forms.RadioButton rbDelPostGrad;
         private System.Windows.Forms.RadioButton rbDelUnderGrad;
@@ -1185,10 +1205,11 @@
         private System.Windows.Forms.TextBox tbEditEmail;
         private System.Windows.Forms.Label lblEditEmail;
         private System.Windows.Forms.ComboBox cbEditCourse;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox tbDelEmail;
+        private System.Windows.Forms.Label lblDelEmail;
+        private System.Windows.Forms.TextBox tbDelPhone;
+        private System.Windows.Forms.Label lblDelPhone;
+        private System.Windows.Forms.ComboBox cbDelCourse;
+        private System.Windows.Forms.DataGridView dgHistory;
     }
 }

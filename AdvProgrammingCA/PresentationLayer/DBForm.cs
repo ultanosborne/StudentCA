@@ -154,9 +154,56 @@ namespace AdvProgrammingCA.PresentationLayer
             cbEditCourse.Text = fs.stu.Course;
         }
 
+        private void btDelFindStu_Click(object sender, EventArgs e)
+        {
+            FindStudent fs = new FindStudent(int.Parse(tbDelStuID.Text));
+            gbDelStudent.Visible = true;
+            tbDelStuID2.Text = fs.stu.StudentID.ToString();
+            tbDelFName.Text = fs.stu.FirstName;
+            tbDelLName.Text = fs.stu.LastName;
+            tbDelPhone.Text = fs.stu.Phone;
+            tbDelEmail.Text = fs.stu.Email;
+            tbDelA1.Text = fs.stu.AddressLine1;
+            tbDelA2.Text = fs.stu.AddressLine2;
+            tbDelCity.Text = fs.stu.City;
+            tbDelCountry.Text = fs.stu.Country;
+
+            if (!fs.stu.Level)
+            {
+                rbDelUnderGrad.Checked = true;
+                rbDelPostGrad.Checked = false;
+            }
+            else
+            {
+                rbDelUnderGrad.Checked = false;
+                rbDelPostGrad.Checked = true;
+            }
+
+            cbDelCourse.Text = fs.stu.Course;
+        }
+
         private void btEditUpdate_Click(object sender, EventArgs e)
         {
 
+            short level = 2;
+
+            if (rbNewPostGrad.Checked)
+            {
+                level = 1;
+            }
+            else if (rbNewUnderGrad.Checked)
+            {
+                level = 0;
+            }
+
+            EditStudent es = new EditStudent(int.Parse(tbEditStuID.Text), tbEditEmail.Text, 
+                tbEditPhone.Text, tbEditA1.Text, tbEditA2.Text, tbEditCity.Text,
+                tbEditCountry.Text, level);
+        }
+
+        private void btDelDelete_Click(object sender, EventArgs e)
+        {
+            DeleteStudent ds = new DeleteStudent(int.Parse(tbDelStuID2.Text));
         }
     }
 }

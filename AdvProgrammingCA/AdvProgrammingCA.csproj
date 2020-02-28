@@ -48,11 +48,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BusinessLayer\AddStudent.cs" />
+    <Compile Include="BusinessLayer\DeleteStudent.cs" />
+    <Compile Include="BusinessLayer\EditStudent.cs" />
     <Compile Include="BusinessLayer\FindStudent.cs" />
     <Compile Include="BusinessLayer\LoginCheck.cs" />
     <Compile Include="BusinessLayer\Student.cs" />
     <Compile Include="BusinessLayer\StudentList.cs" />
     <Compile Include="DataLayer\AddQuery.cs" />
+    <Compile Include="DataLayer\DeleteQuery.cs" />
+    <Compile Include="DataLayer\EditQuery.cs" />
     <Compile Include="DataLayer\FindQuery.cs" />
     <Compile Include="DataLayer\SelectQuery.cs" />
     <Compile Include="PresentationLayer\DBForm.cs">
