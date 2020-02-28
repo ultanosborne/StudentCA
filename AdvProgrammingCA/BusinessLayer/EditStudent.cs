@@ -11,12 +11,16 @@ namespace AdvProgrammingCA.BusinessLayer
     {
 
         EditQuery eq;
+        UpdateHistoryQuery uhq;
 
-        public EditStudent(int id, string email, string phone,
-            string al1, string al2, string city, string country, short glevel)
+        public EditStudent(string sn, string fn, string ln, string em, string ph, string a1, string a2, string ci,
+            string co, short lv, string cs, string username)
         {
             eq = new EditQuery();
-            eq.edit(id, email, phone, al1, al2, city, country, glevel);
+            uhq = new UpdateHistoryQuery();
+            eq.edit(int.Parse(sn), em, ph, a1, a2, ci, co, lv);
+            uhq.update(username, 2, int.Parse(sn), fn, ln, em, ph, a1, a2, ci, co, lv, cs);
+
         }
     }
 }

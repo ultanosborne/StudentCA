@@ -15,10 +15,12 @@ namespace AdvProgrammingCA.PresentationLayer
     {
         LoginForm lf;
         StudentList sl;
+        String username;
 
-        public DBForm(LoginForm l)
+        public DBForm(LoginForm l, string u)
         {
             lf = l;
+            username = u;
             InitializeComponent();
             sl = new StudentList();
             dgStudents.DataSource = sl.pullStudentList();
@@ -98,11 +100,15 @@ namespace AdvProgrammingCA.PresentationLayer
 
         private void lblDelete_Click(object sender, EventArgs e)
         {
+            gbDelStudent.Visible = false;
             tabController(3);
         }
 
         private void lblHistory_Click(object sender, EventArgs e)
         {
+            HistoryList hl = new HistoryList();
+            dgHistory.DataSource = hl.pullHistory();
+            dgHistory.Refresh();
             tabController(4);
         }
 
@@ -120,7 +126,7 @@ namespace AdvProgrammingCA.PresentationLayer
             }
 
             AddStudent ast = new AddStudent(tbNewStuN.Text, tbNewFName.Text, tbNewLName.Text, tbNewEmail.Text, tbNewPhone.Text,
-                    tbNewAd1.Text, tbNewAd2.Text, tbNewCity.Text, tbNewCountry.Text, level, cbNewCourses.Text);
+                    tbNewAd1.Text, tbNewAd2.Text, tbNewCity.Text, tbNewCountry.Text, level, cbNewCourses.Text, username);
             ast.addToDB();
             MessageBox.Show($"Added Student: {tbNewFName.Text} {tbNewLName.Text}");
 
@@ -196,9 +202,9 @@ namespace AdvProgrammingCA.PresentationLayer
                 level = 0;
             }
 
-            EditStudent es = new EditStudent(int.Parse(tbEditStuID.Text), tbEditEmail.Text, 
+            EditStudent es = new EditStudent(tbEditStuID.Text, tbEditFName.Text, tbEditLName.Text, tbEditEmail.Text, 
                 tbEditPhone.Text, tbEditA1.Text, tbEditA2.Text, tbEditCity.Text,
-                tbEditCountry.Text, level);
+                tbEditCountry.Text, level, cbEditCourse.Text, username);
         }
 
         private void btDelDelete_Click(object sender, EventArgs e)

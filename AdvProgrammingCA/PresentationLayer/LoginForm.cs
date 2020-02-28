@@ -26,7 +26,7 @@ namespace AdvProgrammingCA.PresentationLayer
         {
             if(lc.check(tbUsername.Text, tbPassword.Text))
             {
-                DBForm dbf = new DBForm(this);
+                DBForm dbf = new DBForm(this, tbUsername.Text);
                 this.Hide();
                 dbf.Show();
                 allClear(); //to clear login details when unhiding this login form

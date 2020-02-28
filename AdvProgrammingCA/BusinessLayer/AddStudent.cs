@@ -23,10 +23,11 @@ namespace AdvProgrammingCA.BusinessLayer
         string Country { get; set; }
         short Level { get; set; }
         string Course { get; set; }
+        string Username { get; set; }
 
 
         public AddStudent(string sn, string fn, string ln, string em, string ph, string a1, string a2, string ci,
-            string co, short lv, string cs)
+            string co, short lv, string cs, string username)
         {
 
             StuNo = int.Parse(sn);
@@ -41,6 +42,8 @@ namespace AdvProgrammingCA.BusinessLayer
             Level = lv;
             Course = cs;
 
+            Username = username;
+
             aq = new AddQuery();
 
         }
@@ -48,6 +51,9 @@ namespace AdvProgrammingCA.BusinessLayer
         public void addToDB()
         {
             aq.add(StuNo, FName, LName, Email, Phone, Ad1, Ad2, City, Country, Level, Course);
+
+            UpdateHistoryQuery uhq = new UpdateHistoryQuery();
+            uhq.update(Username, 1, StuNo, FName, LName, Email, Phone, Ad1, Ad2, City, Country, Level, Course);
         }
     }
 }
