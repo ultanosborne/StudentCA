@@ -20,5 +20,26 @@ namespace AdvProgrammingCA.BusinessLayer
         public string Course { get; set; }
         public string Phone { get; set; }
 
+        public Student()
+        {
+
+        }
+
+        public Student(int id, string fname, string lname, string email, string a1,
+            string a2, string city, string country, bool level, string course, string phone)
+        {
+            StudentID = id;
+            FirstName = fname;
+            LastName = lname;
+            Email = email;
+            AddressLine1 = a1;
+            AddressLine2 = a2;
+            City = city;
+            Country = country;
+            Level = level;
+            Course = course;
+            Phone = phone;
+        }
+
     }
 }

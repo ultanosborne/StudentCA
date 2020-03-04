@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AdvProgrammingCA.DataLayer;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,11 +10,12 @@ namespace AdvProgrammingCA.BusinessLayer
     class LoginCheck
     {
 
+        PasswordQuery pq;
+
         public bool check(string u, string p)
         {
-            if (u == "username" && p == "pass")
-                return true;
-            return false;
+            pq = new PasswordQuery(u, p);
+            return pq.ComparePW();
         }
 
     }

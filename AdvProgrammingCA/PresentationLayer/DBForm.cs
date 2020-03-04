@@ -125,16 +125,27 @@ namespace AdvProgrammingCA.PresentationLayer
                 level = 0;
             }
 
-            AddStudent ast = new AddStudent(tbNewStuN.Text, tbNewFName.Text, tbNewLName.Text, tbNewEmail.Text, tbNewPhone.Text,
-                    tbNewAd1.Text, tbNewAd2.Text, tbNewCity.Text, tbNewCountry.Text, level, cbNewCourses.Text, username);
-            ast.addToDB();
-            MessageBox.Show($"Added Student: {tbNewFName.Text} {tbNewLName.Text}");
+            Verification v = new Verification(tbNewStuN.Text, tbNewFName.Text, tbNewLName.Text,
+                tbNewEmail.Text, tbNewPhone.Text);
+
+            if(v.Validate())
+            {
+                AddStudent ast = new AddStudent(tbNewStuN.Text, tbNewFName.Text, tbNewLName.Text, tbNewEmail.Text, tbNewPhone.Text,
+                    tbNewAd1.Text, tbNewAd2.Text, tbNewCity.Text, cbNewCounty.Text, level, cbNewCourses.Text, username);
+                ast.addToDB();
+                MessageBox.Show($"Added Student: {tbNewFName.Text} {tbNewLName.Text}");
+            }
+            else
+            {
+                MessageBox.Show("Invalid Input");
+            }
 
         }
 
         private void btEditFindStu_Click(object sender, EventArgs e)
         {
             FindStudent fs = new FindStudent(int.Parse(tbEditStuID.Text));
+
             gbEditStudent.Visible = true;
             tbEditStuID2.Text = fs.stu.StudentID.ToString();
             tbEditFName.Text = fs.stu.FirstName;
@@ -144,7 +155,7 @@ namespace AdvProgrammingCA.PresentationLayer
             tbEditA1.Text = fs.stu.AddressLine1;
             tbEditA2.Text = fs.stu.AddressLine2;
             tbEditCity.Text = fs.stu.City;
-            tbEditCountry.Text = fs.stu.Country;
+            cbEditCounty.Text = fs.stu.Country;
             
             if (!fs.stu.Level)
             {
@@ -172,7 +183,7 @@ namespace AdvProgrammingCA.PresentationLayer
             tbDelA1.Text = fs.stu.AddressLine1;
             tbDelA2.Text = fs.stu.AddressLine2;
             tbDelCity.Text = fs.stu.City;
-            tbDelCountry.Text = fs.stu.Country;
+            cbDelCounty.Text = fs.stu.Country;
 
             if (!fs.stu.Level)
             {
@@ -193,23 +204,60 @@ namespace AdvProgrammingCA.PresentationLayer
 
             short level = 2;
 
-            if (rbNewPostGrad.Checked)
+            if (rbEditPostGrad.Checked)
             {
                 level = 1;
             }
-            else if (rbNewUnderGrad.Checked)
+            else if (rbEditUnderGrad.Checked)
             {
                 level = 0;
             }
 
             EditStudent es = new EditStudent(tbEditStuID.Text, tbEditFName.Text, tbEditLName.Text, tbEditEmail.Text, 
                 tbEditPhone.Text, tbEditA1.Text, tbEditA2.Text, tbEditCity.Text,
-                tbEditCountry.Text, level, cbEditCourse.Text, username);
+                cbEditCounty.Text, level, cbEditCourse.Text, username);
+
+            MessageBox.Show($"Updated Student: {tbEditFName.Text} {tbEditLName.Text}");
         }
 
         private void btDelDelete_Click(object sender, EventArgs e)
         {
-            DeleteStudent ds = new DeleteStudent(int.Parse(tbDelStuID2.Text));
+            short level = 2;
+
+            if (rbDelPostGrad.Checked)
+            {
+                level = 1;
+            }
+            else if (rbDelUnderGrad.Checked)
+            {
+                level = 0;
+            }
+
+            DeleteStudent ds = new DeleteStudent(tbDelStuID.Text, tbDelFName.Text, tbDelLName.Text, tbDelEmail.Text,
+                tbDelPhone.Text, tbDelA1.Text, tbDelA2.Text, tbDelCity.Text,
+                cbDelCounty.Text, level, cbDelCourse.Text, username);
+
+
+            MessageBox.Show($"Deleted Student: {tbDelFName.Text} {tbDelLName.Text}");
+        }
+
+        private void btEditXML_Click(object sender, EventArgs e)
+        {
+            short level = 2;
+
+            if (rbEditPostGrad.Checked)
+            {
+                level = 1;
+            }
+            else if (rbEditUnderGrad.Checked)
+            {
+                level = 0;
+            }
+            XMLExport xe = new XMLExport(tbEditStuID.Text, tbEditFName.Text, tbEditLName.Text, tbEditEmail.Text,
+                tbEditPhone.Text, tbEditA1.Text, tbEditA2.Text, tbEditCity.Text,
+                cbEditCounty.Text, level, cbEditCourse.Text);
+
+            MessageBox.Show("Data Exported");
         }
     }
 }

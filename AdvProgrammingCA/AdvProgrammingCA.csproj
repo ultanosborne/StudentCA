@@ -55,11 +55,14 @@
     <Compile Include="BusinessLayer\LoginCheck.cs" />
     <Compile Include="BusinessLayer\Student.cs" />
     <Compile Include="BusinessLayer\StudentList.cs" />
+    <Compile Include="BusinessLayer\Verification.cs" />
+    <Compile Include="BusinessLayer\XMLExport.cs" />
     <Compile Include="DataLayer\AddQuery.cs" />
     <Compile Include="DataLayer\DeleteQuery.cs" />
     <Compile Include="DataLayer\EditQuery.cs" />
     <Compile Include="DataLayer\FindQuery.cs" />
     <Compile Include="DataLayer\HistoryQuery.cs" />
+    <Compile Include="DataLayer\PasswordQuery.cs" />
     <Compile Include="DataLayer\SelectQuery.cs" />
     <Compile Include="DataLayer\UpdateHistoryQuery.cs" />
     <Compile Include="PresentationLayer\DBForm.cs">

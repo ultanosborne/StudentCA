@@ -1,0 +1,16 @@
+<?xml version="1.0" standalone="yes"?>
+<Students>
+  <Export>
+    <StudentID>1234323</StudentID>
+    <FirstName>Bruce</FirstName>
+    <LastName>Wayne</LastName>
+    <Email>batman@gmail.com</Email>
+    <Phone>911</Phone>
+    <AddressLine1>Bruce Manor</AddressLine1>
+    <AddressLine2>123 Fake Street</AddressLine2>
+    <City>Gotham</City>
+    <Country>America</Country>
+    <GradLevel>2</GradLevel>
+    <Course>Science</Course>
+  </Export>
+</Students>

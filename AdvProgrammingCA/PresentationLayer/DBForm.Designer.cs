@@ -1,4 +1,7 @@
-﻿namespace AdvProgrammingCA.PresentationLayer
+﻿using System.Drawing;
+using System.Windows.Forms;
+
+namespace AdvProgrammingCA.PresentationLayer
 {
     partial class DBForm
     {
@@ -43,7 +46,6 @@
             this.cbNewCourses = new System.Windows.Forms.ComboBox();
             this.rbNewPostGrad = new System.Windows.Forms.RadioButton();
             this.rbNewUnderGrad = new System.Windows.Forms.RadioButton();
-            this.tbNewCountry = new System.Windows.Forms.TextBox();
             this.tbNewCity = new System.Windows.Forms.TextBox();
             this.tbNewAd2 = new System.Windows.Forms.TextBox();
             this.tbNewAd1 = new System.Windows.Forms.TextBox();
@@ -55,7 +57,7 @@
             this.lblNewCourse = new System.Windows.Forms.Label();
             this.lblNewDType = new System.Windows.Forms.Label();
             this.lblNewLName = new System.Windows.Forms.Label();
-            this.lblNewCountry = new System.Windows.Forms.Label();
+            this.lblNewCounty = new System.Windows.Forms.Label();
             this.lblNewCity = new System.Windows.Forms.Label();
             this.lblNewAd2 = new System.Windows.Forms.Label();
             this.lblNewAd1 = new System.Windows.Forms.Label();
@@ -65,18 +67,23 @@
             this.lblNewStuN = new System.Windows.Forms.Label();
             this.tbpEdit = new System.Windows.Forms.TabPage();
             this.gbEditStudent = new System.Windows.Forms.GroupBox();
+            this.btEditXML = new System.Windows.Forms.Button();
+            this.cbEditCourse = new System.Windows.Forms.ComboBox();
+            this.tbEditEmail = new System.Windows.Forms.TextBox();
+            this.lblEditEmail = new System.Windows.Forms.Label();
+            this.tbEditPhone = new System.Windows.Forms.TextBox();
+            this.lblEditPhone = new System.Windows.Forms.Label();
             this.btEditUpdate = new System.Windows.Forms.Button();
             this.rbEditPostGrad = new System.Windows.Forms.RadioButton();
             this.rbEditUnderGrad = new System.Windows.Forms.RadioButton();
             this.tbEditA1 = new System.Windows.Forms.TextBox();
             this.tbEditA2 = new System.Windows.Forms.TextBox();
             this.tbEditCity = new System.Windows.Forms.TextBox();
-            this.tbEditCountry = new System.Windows.Forms.TextBox();
             this.tbEditLName = new System.Windows.Forms.TextBox();
             this.tbEditFName = new System.Windows.Forms.TextBox();
             this.tbEditStuID2 = new System.Windows.Forms.TextBox();
             this.lblLName = new System.Windows.Forms.Label();
-            this.lblCountry = new System.Windows.Forms.Label();
+            this.lblCounty = new System.Windows.Forms.Label();
             this.lblCity = new System.Windows.Forms.Label();
             this.lblEditDLevel = new System.Windows.Forms.Label();
             this.lblCourse = new System.Windows.Forms.Label();
@@ -89,18 +96,22 @@
             this.lblEditStuID = new System.Windows.Forms.Label();
             this.tbpDelete = new System.Windows.Forms.TabPage();
             this.gbDelStudent = new System.Windows.Forms.GroupBox();
+            this.cbDelCourse = new System.Windows.Forms.ComboBox();
+            this.tbDelEmail = new System.Windows.Forms.TextBox();
+            this.lblDelEmail = new System.Windows.Forms.Label();
+            this.tbDelPhone = new System.Windows.Forms.TextBox();
+            this.lblDelPhone = new System.Windows.Forms.Label();
             this.btDelDelete = new System.Windows.Forms.Button();
             this.rbDelPostGrad = new System.Windows.Forms.RadioButton();
             this.rbDelUnderGrad = new System.Windows.Forms.RadioButton();
             this.tbDelA1 = new System.Windows.Forms.TextBox();
             this.tbDelA2 = new System.Windows.Forms.TextBox();
             this.tbDelCity = new System.Windows.Forms.TextBox();
-            this.tbDelCountry = new System.Windows.Forms.TextBox();
             this.tbDelLName = new System.Windows.Forms.TextBox();
             this.tbDelFName = new System.Windows.Forms.TextBox();
             this.tbDelStuID2 = new System.Windows.Forms.TextBox();
             this.lblDelLName = new System.Windows.Forms.Label();
-            this.lblDelCountry = new System.Windows.Forms.Label();
+            this.lblDelCounty = new System.Windows.Forms.Label();
             this.lblDelCity = new System.Windows.Forms.Label();
             this.lblDelDLevel = new System.Windows.Forms.Label();
             this.lblDelCourse = new System.Windows.Forms.Label();
@@ -112,17 +123,10 @@
             this.tbDelStuID = new System.Windows.Forms.TextBox();
             this.lblDelStuID = new System.Windows.Forms.Label();
             this.tbpHistory = new System.Windows.Forms.TabPage();
-            this.lblEditPhone = new System.Windows.Forms.Label();
-            this.tbEditPhone = new System.Windows.Forms.TextBox();
-            this.lblEditEmail = new System.Windows.Forms.Label();
-            this.tbEditEmail = new System.Windows.Forms.TextBox();
-            this.cbEditCourse = new System.Windows.Forms.ComboBox();
-            this.tbDelEmail = new System.Windows.Forms.TextBox();
-            this.lblDelEmail = new System.Windows.Forms.Label();
-            this.tbDelPhone = new System.Windows.Forms.TextBox();
-            this.lblDelPhone = new System.Windows.Forms.Label();
-            this.cbDelCourse = new System.Windows.Forms.ComboBox();
             this.dgHistory = new System.Windows.Forms.DataGridView();
+            this.cbNewCounty = new System.Windows.Forms.ComboBox();
+            this.cbEditCounty = new System.Windows.Forms.ComboBox();
+            this.cbDelCounty = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.tbpView.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgStudents)).BeginInit();
@@ -217,31 +221,34 @@
             // 
             // tabControl1
             // 
+            this.tabControl1.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
             this.tabControl1.Controls.Add(this.tbpView);
             this.tabControl1.Controls.Add(this.tbpNew);
             this.tabControl1.Controls.Add(this.tbpEdit);
             this.tabControl1.Controls.Add(this.tbpDelete);
             this.tabControl1.Controls.Add(this.tbpHistory);
+            this.tabControl1.ItemSize = new Size(0, 1);
             this.tabControl1.Location = new System.Drawing.Point(40, 42);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(724, 324);
+            this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabControl1.TabIndex = 15;
             // 
             // tbpView
             // 
             this.tbpView.BackColor = System.Drawing.SystemColors.Control;
             this.tbpView.Controls.Add(this.dgStudents);
-            this.tbpView.Location = new System.Drawing.Point(4, 22);
+            this.tbpView.Location = new System.Drawing.Point(4, 25);
             this.tbpView.Name = "tbpView";
             this.tbpView.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpView.Size = new System.Drawing.Size(716, 298);
+            this.tbpView.Size = new System.Drawing.Size(716, 295);
             this.tbpView.TabIndex = 0;
             // 
             // dgStudents
             // 
             this.dgStudents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgStudents.Location = new System.Drawing.Point(-4, 3);
+            this.dgStudents.Location = new System.Drawing.Point(-1, 7);
             this.dgStudents.Name = "dgStudents";
             this.dgStudents.Size = new System.Drawing.Size(714, 286);
             this.dgStudents.TabIndex = 0;
@@ -249,11 +256,11 @@
             // tbpNew
             // 
             this.tbpNew.BackColor = System.Drawing.SystemColors.Control;
+            this.tbpNew.Controls.Add(this.cbNewCounty);
             this.tbpNew.Controls.Add(this.btAddStudent);
             this.tbpNew.Controls.Add(this.cbNewCourses);
             this.tbpNew.Controls.Add(this.rbNewPostGrad);
             this.tbpNew.Controls.Add(this.rbNewUnderGrad);
-            this.tbpNew.Controls.Add(this.tbNewCountry);
             this.tbpNew.Controls.Add(this.tbNewCity);
             this.tbpNew.Controls.Add(this.tbNewAd2);
             this.tbpNew.Controls.Add(this.tbNewAd1);
@@ -265,7 +272,7 @@
             this.tbpNew.Controls.Add(this.lblNewCourse);
             this.tbpNew.Controls.Add(this.lblNewDType);
             this.tbpNew.Controls.Add(this.lblNewLName);
-            this.tbpNew.Controls.Add(this.lblNewCountry);
+            this.tbpNew.Controls.Add(this.lblNewCounty);
             this.tbpNew.Controls.Add(this.lblNewCity);
             this.tbpNew.Controls.Add(this.lblNewAd2);
             this.tbpNew.Controls.Add(this.lblNewAd1);
@@ -273,10 +280,10 @@
             this.tbpNew.Controls.Add(this.lblNewPhone);
             this.tbpNew.Controls.Add(this.lblNewFName);
             this.tbpNew.Controls.Add(this.lblNewStuN);
-            this.tbpNew.Location = new System.Drawing.Point(4, 22);
+            this.tbpNew.Location = new System.Drawing.Point(4, 25);
             this.tbpNew.Name = "tbpNew";
             this.tbpNew.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpNew.Size = new System.Drawing.Size(716, 298);
+            this.tbpNew.Size = new System.Drawing.Size(716, 295);
             this.tbpNew.TabIndex = 1;
             // 
             // btAddStudent
@@ -325,13 +332,6 @@
             this.rbNewUnderGrad.TabStop = true;
             this.rbNewUnderGrad.Text = "UnderGrad";
             this.rbNewUnderGrad.UseVisualStyleBackColor = true;
-            // 
-            // tbNewCountry
-            // 
-            this.tbNewCountry.Location = new System.Drawing.Point(133, 262);
-            this.tbNewCountry.Name = "tbNewCountry";
-            this.tbNewCountry.Size = new System.Drawing.Size(100, 20);
-            this.tbNewCountry.TabIndex = 19;
             // 
             // tbNewCity
             // 
@@ -416,14 +416,14 @@
             this.lblNewLName.TabIndex = 8;
             this.lblNewLName.Text = "Last Name";
             // 
-            // lblNewCountry
+            // lblNewCounty
             // 
-            this.lblNewCountry.AutoSize = true;
-            this.lblNewCountry.Location = new System.Drawing.Point(33, 265);
-            this.lblNewCountry.Name = "lblNewCountry";
-            this.lblNewCountry.Size = new System.Drawing.Size(43, 13);
-            this.lblNewCountry.TabIndex = 7;
-            this.lblNewCountry.Text = "Country";
+            this.lblNewCounty.AutoSize = true;
+            this.lblNewCounty.Location = new System.Drawing.Point(33, 265);
+            this.lblNewCounty.Name = "lblNewCounty";
+            this.lblNewCounty.Size = new System.Drawing.Size(40, 13);
+            this.lblNewCounty.TabIndex = 7;
+            this.lblNewCounty.Text = "County";
             // 
             // lblNewCity
             // 
@@ -495,13 +495,15 @@
             this.tbpEdit.Controls.Add(this.btEditFindStu);
             this.tbpEdit.Controls.Add(this.tbEditStuID);
             this.tbpEdit.Controls.Add(this.lblEditStuID);
-            this.tbpEdit.Location = new System.Drawing.Point(4, 22);
+            this.tbpEdit.Location = new System.Drawing.Point(4, 25);
             this.tbpEdit.Name = "tbpEdit";
-            this.tbpEdit.Size = new System.Drawing.Size(716, 298);
+            this.tbpEdit.Size = new System.Drawing.Size(716, 295);
             this.tbpEdit.TabIndex = 2;
             // 
             // gbEditStudent
             // 
+            this.gbEditStudent.Controls.Add(this.cbEditCounty);
+            this.gbEditStudent.Controls.Add(this.btEditXML);
             this.gbEditStudent.Controls.Add(this.cbEditCourse);
             this.gbEditStudent.Controls.Add(this.tbEditEmail);
             this.gbEditStudent.Controls.Add(this.lblEditEmail);
@@ -513,12 +515,11 @@
             this.gbEditStudent.Controls.Add(this.tbEditA1);
             this.gbEditStudent.Controls.Add(this.tbEditA2);
             this.gbEditStudent.Controls.Add(this.tbEditCity);
-            this.gbEditStudent.Controls.Add(this.tbEditCountry);
             this.gbEditStudent.Controls.Add(this.tbEditLName);
             this.gbEditStudent.Controls.Add(this.tbEditFName);
             this.gbEditStudent.Controls.Add(this.tbEditStuID2);
             this.gbEditStudent.Controls.Add(this.lblLName);
-            this.gbEditStudent.Controls.Add(this.lblCountry);
+            this.gbEditStudent.Controls.Add(this.lblCounty);
             this.gbEditStudent.Controls.Add(this.lblCity);
             this.gbEditStudent.Controls.Add(this.lblEditDLevel);
             this.gbEditStudent.Controls.Add(this.lblCourse);
@@ -531,6 +532,64 @@
             this.gbEditStudent.Size = new System.Drawing.Size(647, 183);
             this.gbEditStudent.TabIndex = 3;
             this.gbEditStudent.TabStop = false;
+            // 
+            // btEditXML
+            // 
+            this.btEditXML.Location = new System.Drawing.Point(522, 45);
+            this.btEditXML.Name = "btEditXML";
+            this.btEditXML.Size = new System.Drawing.Size(75, 53);
+            this.btEditXML.TabIndex = 4;
+            this.btEditXML.Text = "Export to XML";
+            this.btEditXML.UseVisualStyleBackColor = true;
+            this.btEditXML.Click += new System.EventHandler(this.btEditXML_Click);
+            // 
+            // cbEditCourse
+            // 
+            this.cbEditCourse.Enabled = false;
+            this.cbEditCourse.FormattingEnabled = true;
+            this.cbEditCourse.Items.AddRange(new object[] {
+            "Software Development",
+            "Arts",
+            "Science",
+            "Business",
+            "Mathematics",
+            "English"});
+            this.cbEditCourse.Location = new System.Drawing.Point(358, 146);
+            this.cbEditCourse.Name = "cbEditCourse";
+            this.cbEditCourse.Size = new System.Drawing.Size(121, 21);
+            this.cbEditCourse.TabIndex = 24;
+            // 
+            // tbEditEmail
+            // 
+            this.tbEditEmail.Location = new System.Drawing.Point(374, 38);
+            this.tbEditEmail.Name = "tbEditEmail";
+            this.tbEditEmail.Size = new System.Drawing.Size(100, 20);
+            this.tbEditEmail.TabIndex = 23;
+            // 
+            // lblEditEmail
+            // 
+            this.lblEditEmail.AutoSize = true;
+            this.lblEditEmail.Location = new System.Drawing.Point(307, 45);
+            this.lblEditEmail.Name = "lblEditEmail";
+            this.lblEditEmail.Size = new System.Drawing.Size(32, 13);
+            this.lblEditEmail.TabIndex = 22;
+            this.lblEditEmail.Text = "Email";
+            // 
+            // tbEditPhone
+            // 
+            this.tbEditPhone.Location = new System.Drawing.Point(161, 38);
+            this.tbEditPhone.Name = "tbEditPhone";
+            this.tbEditPhone.Size = new System.Drawing.Size(100, 20);
+            this.tbEditPhone.TabIndex = 21;
+            // 
+            // lblEditPhone
+            // 
+            this.lblEditPhone.AutoSize = true;
+            this.lblEditPhone.Location = new System.Drawing.Point(89, 41);
+            this.lblEditPhone.Name = "lblEditPhone";
+            this.lblEditPhone.Size = new System.Drawing.Size(38, 13);
+            this.lblEditPhone.TabIndex = 20;
+            this.lblEditPhone.Text = "Phone";
             // 
             // btEditUpdate
             // 
@@ -585,13 +644,6 @@
             this.tbEditCity.Size = new System.Drawing.Size(100, 20);
             this.tbEditCity.TabIndex = 6;
             // 
-            // tbEditCountry
-            // 
-            this.tbEditCountry.Location = new System.Drawing.Point(108, 146);
-            this.tbEditCountry.Name = "tbEditCountry";
-            this.tbEditCountry.Size = new System.Drawing.Size(100, 20);
-            this.tbEditCountry.TabIndex = 7;
-            // 
             // tbEditLName
             // 
             this.tbEditLName.Enabled = false;
@@ -625,14 +677,14 @@
             this.lblLName.TabIndex = 12;
             this.lblLName.Text = "Last Name:";
             // 
-            // lblCountry
+            // lblCounty
             // 
-            this.lblCountry.AutoSize = true;
-            this.lblCountry.Location = new System.Drawing.Point(19, 149);
-            this.lblCountry.Name = "lblCountry";
-            this.lblCountry.Size = new System.Drawing.Size(43, 13);
-            this.lblCountry.TabIndex = 11;
-            this.lblCountry.Text = "Country";
+            this.lblCounty.AutoSize = true;
+            this.lblCounty.Location = new System.Drawing.Point(19, 149);
+            this.lblCounty.Name = "lblCounty";
+            this.lblCounty.Size = new System.Drawing.Size(40, 13);
+            this.lblCounty.TabIndex = 11;
+            this.lblCounty.Text = "County";
             // 
             // lblCity
             // 
@@ -730,13 +782,14 @@
             this.tbpDelete.Controls.Add(this.btDelFindStu);
             this.tbpDelete.Controls.Add(this.tbDelStuID);
             this.tbpDelete.Controls.Add(this.lblDelStuID);
-            this.tbpDelete.Location = new System.Drawing.Point(4, 22);
+            this.tbpDelete.Location = new System.Drawing.Point(4, 25);
             this.tbpDelete.Name = "tbpDelete";
-            this.tbpDelete.Size = new System.Drawing.Size(716, 298);
+            this.tbpDelete.Size = new System.Drawing.Size(716, 295);
             this.tbpDelete.TabIndex = 3;
             // 
             // gbDelStudent
             // 
+            this.gbDelStudent.Controls.Add(this.cbDelCounty);
             this.gbDelStudent.Controls.Add(this.cbDelCourse);
             this.gbDelStudent.Controls.Add(this.tbDelEmail);
             this.gbDelStudent.Controls.Add(this.lblDelEmail);
@@ -748,12 +801,11 @@
             this.gbDelStudent.Controls.Add(this.tbDelA1);
             this.gbDelStudent.Controls.Add(this.tbDelA2);
             this.gbDelStudent.Controls.Add(this.tbDelCity);
-            this.gbDelStudent.Controls.Add(this.tbDelCountry);
             this.gbDelStudent.Controls.Add(this.tbDelLName);
             this.gbDelStudent.Controls.Add(this.tbDelFName);
             this.gbDelStudent.Controls.Add(this.tbDelStuID2);
             this.gbDelStudent.Controls.Add(this.lblDelLName);
-            this.gbDelStudent.Controls.Add(this.lblDelCountry);
+            this.gbDelStudent.Controls.Add(this.lblDelCounty);
             this.gbDelStudent.Controls.Add(this.lblDelCity);
             this.gbDelStudent.Controls.Add(this.lblDelDLevel);
             this.gbDelStudent.Controls.Add(this.lblDelCourse);
@@ -766,6 +818,56 @@
             this.gbDelStudent.Size = new System.Drawing.Size(647, 183);
             this.gbDelStudent.TabIndex = 7;
             this.gbDelStudent.TabStop = false;
+            // 
+            // cbDelCourse
+            // 
+            this.cbDelCourse.Enabled = false;
+            this.cbDelCourse.FormattingEnabled = true;
+            this.cbDelCourse.Items.AddRange(new object[] {
+            "Software Development",
+            "Arts",
+            "Science",
+            "Business",
+            "Mathematics",
+            "English"});
+            this.cbDelCourse.Location = new System.Drawing.Point(358, 146);
+            this.cbDelCourse.Name = "cbDelCourse";
+            this.cbDelCourse.Size = new System.Drawing.Size(121, 21);
+            this.cbDelCourse.TabIndex = 28;
+            // 
+            // tbDelEmail
+            // 
+            this.tbDelEmail.Enabled = false;
+            this.tbDelEmail.Location = new System.Drawing.Point(374, 38);
+            this.tbDelEmail.Name = "tbDelEmail";
+            this.tbDelEmail.Size = new System.Drawing.Size(100, 20);
+            this.tbDelEmail.TabIndex = 27;
+            // 
+            // lblDelEmail
+            // 
+            this.lblDelEmail.AutoSize = true;
+            this.lblDelEmail.Location = new System.Drawing.Point(307, 45);
+            this.lblDelEmail.Name = "lblDelEmail";
+            this.lblDelEmail.Size = new System.Drawing.Size(32, 13);
+            this.lblDelEmail.TabIndex = 26;
+            this.lblDelEmail.Text = "Email";
+            // 
+            // tbDelPhone
+            // 
+            this.tbDelPhone.Enabled = false;
+            this.tbDelPhone.Location = new System.Drawing.Point(161, 38);
+            this.tbDelPhone.Name = "tbDelPhone";
+            this.tbDelPhone.Size = new System.Drawing.Size(100, 20);
+            this.tbDelPhone.TabIndex = 25;
+            // 
+            // lblDelPhone
+            // 
+            this.lblDelPhone.AutoSize = true;
+            this.lblDelPhone.Location = new System.Drawing.Point(89, 41);
+            this.lblDelPhone.Name = "lblDelPhone";
+            this.lblDelPhone.Size = new System.Drawing.Size(38, 13);
+            this.lblDelPhone.TabIndex = 24;
+            this.lblDelPhone.Text = "Phone";
             // 
             // btDelDelete
             // 
@@ -825,14 +927,6 @@
             this.tbDelCity.Size = new System.Drawing.Size(100, 20);
             this.tbDelCity.TabIndex = 6;
             // 
-            // tbDelCountry
-            // 
-            this.tbDelCountry.Enabled = false;
-            this.tbDelCountry.Location = new System.Drawing.Point(108, 146);
-            this.tbDelCountry.Name = "tbDelCountry";
-            this.tbDelCountry.Size = new System.Drawing.Size(100, 20);
-            this.tbDelCountry.TabIndex = 7;
-            // 
             // tbDelLName
             // 
             this.tbDelLName.Enabled = false;
@@ -866,14 +960,14 @@
             this.lblDelLName.TabIndex = 12;
             this.lblDelLName.Text = "Last Name:";
             // 
-            // lblDelCountry
+            // lblDelCounty
             // 
-            this.lblDelCountry.AutoSize = true;
-            this.lblDelCountry.Location = new System.Drawing.Point(19, 149);
-            this.lblDelCountry.Name = "lblDelCountry";
-            this.lblDelCountry.Size = new System.Drawing.Size(43, 13);
-            this.lblDelCountry.TabIndex = 11;
-            this.lblDelCountry.Text = "Country";
+            this.lblDelCounty.AutoSize = true;
+            this.lblDelCounty.Location = new System.Drawing.Point(19, 149);
+            this.lblDelCounty.Name = "lblDelCounty";
+            this.lblDelCounty.Size = new System.Drawing.Size(40, 13);
+            this.lblDelCounty.TabIndex = 11;
+            this.lblDelCounty.Text = "County";
             // 
             // lblDelCity
             // 
@@ -968,108 +1062,10 @@
             // 
             this.tbpHistory.BackColor = System.Drawing.SystemColors.Control;
             this.tbpHistory.Controls.Add(this.dgHistory);
-            this.tbpHistory.Location = new System.Drawing.Point(4, 22);
+            this.tbpHistory.Location = new System.Drawing.Point(4, 25);
             this.tbpHistory.Name = "tbpHistory";
-            this.tbpHistory.Size = new System.Drawing.Size(716, 298);
+            this.tbpHistory.Size = new System.Drawing.Size(716, 295);
             this.tbpHistory.TabIndex = 4;
-            // 
-            // lblEditPhone
-            // 
-            this.lblEditPhone.AutoSize = true;
-            this.lblEditPhone.Location = new System.Drawing.Point(89, 41);
-            this.lblEditPhone.Name = "lblEditPhone";
-            this.lblEditPhone.Size = new System.Drawing.Size(38, 13);
-            this.lblEditPhone.TabIndex = 20;
-            this.lblEditPhone.Text = "Phone";
-            // 
-            // tbEditPhone
-            // 
-            this.tbEditPhone.Location = new System.Drawing.Point(161, 38);
-            this.tbEditPhone.Name = "tbEditPhone";
-            this.tbEditPhone.Size = new System.Drawing.Size(100, 20);
-            this.tbEditPhone.TabIndex = 21;
-            // 
-            // lblEditEmail
-            // 
-            this.lblEditEmail.AutoSize = true;
-            this.lblEditEmail.Location = new System.Drawing.Point(307, 45);
-            this.lblEditEmail.Name = "lblEditEmail";
-            this.lblEditEmail.Size = new System.Drawing.Size(32, 13);
-            this.lblEditEmail.TabIndex = 22;
-            this.lblEditEmail.Text = "Email";
-            // 
-            // tbEditEmail
-            // 
-            this.tbEditEmail.Location = new System.Drawing.Point(374, 38);
-            this.tbEditEmail.Name = "tbEditEmail";
-            this.tbEditEmail.Size = new System.Drawing.Size(100, 20);
-            this.tbEditEmail.TabIndex = 23;
-            // 
-            // cbEditCourse
-            // 
-            this.cbEditCourse.Enabled = false;
-            this.cbEditCourse.FormattingEnabled = true;
-            this.cbEditCourse.Items.AddRange(new object[] {
-            "Software Development",
-            "Arts",
-            "Science",
-            "Business",
-            "Mathematics",
-            "English"});
-            this.cbEditCourse.Location = new System.Drawing.Point(358, 146);
-            this.cbEditCourse.Name = "cbEditCourse";
-            this.cbEditCourse.Size = new System.Drawing.Size(121, 21);
-            this.cbEditCourse.TabIndex = 24;
-            // 
-            // tbDelEmail
-            // 
-            this.tbDelEmail.Enabled = false;
-            this.tbDelEmail.Location = new System.Drawing.Point(374, 38);
-            this.tbDelEmail.Name = "tbDelEmail";
-            this.tbDelEmail.Size = new System.Drawing.Size(100, 20);
-            this.tbDelEmail.TabIndex = 27;
-            // 
-            // lblDelEmail
-            // 
-            this.lblDelEmail.AutoSize = true;
-            this.lblDelEmail.Location = new System.Drawing.Point(307, 45);
-            this.lblDelEmail.Name = "lblDelEmail";
-            this.lblDelEmail.Size = new System.Drawing.Size(32, 13);
-            this.lblDelEmail.TabIndex = 26;
-            this.lblDelEmail.Text = "Email";
-            // 
-            // tbDelPhone
-            // 
-            this.tbDelPhone.Enabled = false;
-            this.tbDelPhone.Location = new System.Drawing.Point(161, 38);
-            this.tbDelPhone.Name = "tbDelPhone";
-            this.tbDelPhone.Size = new System.Drawing.Size(100, 20);
-            this.tbDelPhone.TabIndex = 25;
-            // 
-            // lblDelPhone
-            // 
-            this.lblDelPhone.AutoSize = true;
-            this.lblDelPhone.Location = new System.Drawing.Point(89, 41);
-            this.lblDelPhone.Name = "lblDelPhone";
-            this.lblDelPhone.Size = new System.Drawing.Size(38, 13);
-            this.lblDelPhone.TabIndex = 24;
-            this.lblDelPhone.Text = "Phone";
-            // 
-            // cbDelCourse
-            // 
-            this.cbDelCourse.Enabled = false;
-            this.cbDelCourse.FormattingEnabled = true;
-            this.cbDelCourse.Items.AddRange(new object[] {
-            "Software Development",
-            "Arts",
-            "Science",
-            "Business",
-            "Mathematics",
-            "English"});
-            this.cbDelCourse.Location = new System.Drawing.Point(358, 146);
-            this.cbDelCourse.Name = "cbDelCourse";
-            this.cbDelCourse.Size = new System.Drawing.Size(121, 21);
-            this.cbDelCourse.TabIndex = 28;
             // 
             // dgHistory
             // 
@@ -1078,6 +1074,129 @@
             this.dgHistory.Name = "dgHistory";
             this.dgHistory.Size = new System.Drawing.Size(714, 286);
             this.dgHistory.TabIndex = 1;
+            // 
+            // cbNewCounty
+            // 
+            this.cbNewCounty.FormattingEnabled = true;
+            this.cbNewCounty.Items.AddRange(new object[] {
+            "Antrim",
+            "Armagh",
+            "Carlow",
+            "Cavan",
+            "Clare",
+            "Cork",
+            "Derry",
+            "Donegal",
+            "Down",
+            "Dublin",
+            "Fermanagh",
+            "Galway",
+            "Kerry",
+            "Kildare",
+            "Kilkenny",
+            "Laois",
+            "Leitrim",
+            "Limerick",
+            "Longford",
+            "Louth",
+            "Mayo",
+            "Meath",
+            "Monaghan",
+            "Offaly",
+            "Roscommon",
+            "Sligo",
+            "Tipperary",
+            "Tyrone",
+            "Waterford",
+            "Westmeath",
+            "Wexford",
+            "Wicklow"});
+            this.cbNewCounty.Location = new System.Drawing.Point(133, 262);
+            this.cbNewCounty.Name = "cbNewCounty";
+            this.cbNewCounty.Size = new System.Drawing.Size(100, 21);
+            this.cbNewCounty.TabIndex = 24;
+            // 
+            // cbEditCounty
+            // 
+            this.cbEditCounty.FormattingEnabled = true;
+            this.cbEditCounty.Items.AddRange(new object[] {
+            "Antrim",
+            "Armagh",
+            "Carlow",
+            "Cavan",
+            "Clare",
+            "Cork",
+            "Derry",
+            "Donegal",
+            "Down",
+            "Dublin",
+            "Fermanagh",
+            "Galway",
+            "Kerry",
+            "Kildare",
+            "Kilkenny",
+            "Laois",
+            "Leitrim",
+            "Limerick",
+            "Longford",
+            "Louth",
+            "Mayo",
+            "Meath",
+            "Monaghan",
+            "Offaly",
+            "Roscommon",
+            "Sligo",
+            "Tipperary",
+            "Tyrone",
+            "Waterford",
+            "Westmeath",
+            "Wexford",
+            "Wicklow"});
+            this.cbEditCounty.Location = new System.Drawing.Point(108, 146);
+            this.cbEditCounty.Name = "cbEditCounty";
+            this.cbEditCounty.Size = new System.Drawing.Size(100, 21);
+            this.cbEditCounty.TabIndex = 25;
+            // 
+            // cbDelCounty
+            // 
+            this.cbDelCounty.FormattingEnabled = true;
+            this.cbDelCounty.Items.AddRange(new object[] {
+            "Antrim",
+            "Armagh",
+            "Carlow",
+            "Cavan",
+            "Clare",
+            "Cork",
+            "Derry",
+            "Donegal",
+            "Down",
+            "Dublin",
+            "Fermanagh",
+            "Galway",
+            "Kerry",
+            "Kildare",
+            "Kilkenny",
+            "Laois",
+            "Leitrim",
+            "Limerick",
+            "Longford",
+            "Louth",
+            "Mayo",
+            "Meath",
+            "Monaghan",
+            "Offaly",
+            "Roscommon",
+            "Sligo",
+            "Tipperary",
+            "Tyrone",
+            "Waterford",
+            "Westmeath",
+            "Wexford",
+            "Wicklow"});
+            this.cbDelCounty.Location = new System.Drawing.Point(108, 146);
+            this.cbDelCounty.Name = "cbDelCounty";
+            this.cbDelCounty.Size = new System.Drawing.Size(100, 21);
+            this.cbDelCounty.TabIndex = 29;
             // 
             // DBForm
             // 
@@ -1131,7 +1250,6 @@
         private System.Windows.Forms.ComboBox cbNewCourses;
         private System.Windows.Forms.RadioButton rbNewPostGrad;
         private System.Windows.Forms.RadioButton rbNewUnderGrad;
-        private System.Windows.Forms.TextBox tbNewCountry;
         private System.Windows.Forms.TextBox tbNewCity;
         private System.Windows.Forms.TextBox tbNewAd2;
         private System.Windows.Forms.TextBox tbNewAd1;
@@ -1143,7 +1261,7 @@
         private System.Windows.Forms.Label lblNewCourse;
         private System.Windows.Forms.Label lblNewDType;
         private System.Windows.Forms.Label lblNewLName;
-        private System.Windows.Forms.Label lblNewCountry;
+        private System.Windows.Forms.Label lblNewCounty;
         private System.Windows.Forms.Label lblNewCity;
         private System.Windows.Forms.Label lblNewAd2;
         private System.Windows.Forms.Label lblNewAd1;
@@ -1159,12 +1277,11 @@
         private System.Windows.Forms.TextBox tbEditA1;
         private System.Windows.Forms.TextBox tbEditA2;
         private System.Windows.Forms.TextBox tbEditCity;
-        private System.Windows.Forms.TextBox tbEditCountry;
         private System.Windows.Forms.TextBox tbEditLName;
         private System.Windows.Forms.TextBox tbEditFName;
         private System.Windows.Forms.TextBox tbEditStuID2;
         private System.Windows.Forms.Label lblLName;
-        private System.Windows.Forms.Label lblCountry;
+        private System.Windows.Forms.Label lblCounty;
         private System.Windows.Forms.Label lblCity;
         private System.Windows.Forms.Label lblEditDLevel;
         private System.Windows.Forms.Label lblCourse;
@@ -1183,12 +1300,11 @@
         private System.Windows.Forms.TextBox tbDelA1;
         private System.Windows.Forms.TextBox tbDelA2;
         private System.Windows.Forms.TextBox tbDelCity;
-        private System.Windows.Forms.TextBox tbDelCountry;
         private System.Windows.Forms.TextBox tbDelLName;
         private System.Windows.Forms.TextBox tbDelFName;
         private System.Windows.Forms.TextBox tbDelStuID2;
         private System.Windows.Forms.Label lblDelLName;
-        private System.Windows.Forms.Label lblDelCountry;
+        private System.Windows.Forms.Label lblDelCounty;
         private System.Windows.Forms.Label lblDelCity;
         private System.Windows.Forms.Label lblDelDLevel;
         private System.Windows.Forms.Label lblDelCourse;
@@ -1211,5 +1327,9 @@
         private System.Windows.Forms.Label lblDelPhone;
         private System.Windows.Forms.ComboBox cbDelCourse;
         private System.Windows.Forms.DataGridView dgHistory;
+        private Button btEditXML;
+        private ComboBox cbNewCounty;
+        private ComboBox cbEditCounty;
+        private ComboBox cbDelCounty;
     }
 }
